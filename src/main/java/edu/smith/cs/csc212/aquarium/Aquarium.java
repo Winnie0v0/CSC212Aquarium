@@ -45,8 +45,8 @@ public class Aquarium extends GFX {
 	//int fish2X = getWidth() + 300;
 	//int fish3X = -100;
 	
-	Fish nemo = new Fish(Color.MAGENTA, 250, 250, true, false);
-	Fish marlin = new Fish(Color.ORANGE, 100, 100, false, true);
+	Fish nemo = new Fish(Color.MAGENTA, 250, 250, true);
+	Fish marlin = new Fish(Color.ORANGE, 100, 100, false);
 
 	@Override
 	public void draw(Graphics2D g) {
@@ -55,7 +55,6 @@ public class Aquarium extends GFX {
 		g.fillRect(0, 0, getWidth(), getHeight());
 
 		nemo.draw(g);
-		nemo.swim();
 		marlin.draw(g);
 		// Draw the fish!
 		//DrawFish.facingLeft(g, Color.yellow, fish1X, 200);
@@ -76,8 +75,8 @@ public class Aquarium extends GFX {
 		
 		/*if (fish3X > getWidth() + 100) {
 			fish3X = -100;
-		}
-	}*/
+		}*/
+	}
 
 	public static void main(String[] args) {
 		// Uncomment this to make it go slower!
