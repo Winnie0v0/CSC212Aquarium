@@ -23,8 +23,6 @@ public class Aquarium extends GFX {
 	int g1 = 100;
 	boolean check = true;
 	Random rand = new Random();
-	int a = rand.nextInt(100);
-	int b = rand.nextInt(100) + 400;
 
 	public Aquarium() {
 		super(WIDTH, HEIGHT);
