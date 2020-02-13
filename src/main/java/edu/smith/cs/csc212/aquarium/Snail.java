@@ -46,11 +46,28 @@ public class Snail {
 		this.direction = s.toLowerCase();
 	}
 
-	/**
-	 * TODO: move the snail about.
-	 */
 	public void move() {
-
+		if ("bottom".equals(this.direction)) {
+			this.x += 1;
+			if (this.x >= 450) {
+				this.setSide("right");
+			}
+		} else if ("top".equals(this.direction)) {
+			this.x -= 1;
+			if (this.x <= 50) {
+				this.setSide("left");
+			}
+		} else if ("left".equals(this.direction)) {
+			this.y += 1;
+			if (this.y >= 550) {
+				this.setSide("bottom");
+			}
+		} else { // we don't have to say "right" here.
+			this.y -= 1;
+			if (this.y <= 0) {
+				this.setSide("top");
+			}
+		}
 	}
 
 	/**
@@ -58,10 +75,10 @@ public class Snail {
 	 * 
 	 * @param g - the window to draw to.
 	 */
-	public void draw(Graphics2D g) {
+	public void draw(Graphics2D g, Color eyeBallColor, Color eyeLidColor) {
 		// By calling move here, if we want to move our snail, we can do so.
 		// Move gets called by draw, so whenever draw gets called.
-		this.move();
+		//this.move();
 
 		// By making a new Graphics2D object, we can move everything that gets drawn to
 		// it.
@@ -71,18 +88,18 @@ public class Snail {
 
 		// Note that I need to compare strings with ".equals" this is a Java weirdness.
 		if ("bottom".equals(this.direction)) {
-			drawSnail(position, Color.red, Color.white, Color.black);
+			drawSnail(position, Color.red, Color.white, eyeBallColor, eyeLidColor);
 		} else if ("top".equals(this.direction)) {
 			position.scale(-1, -1);
-			drawSnail(position, Color.red, Color.white, Color.black);
+			drawSnail(position, Color.red, Color.white, eyeBallColor, eyeLidColor);
 		} else if ("left".equals(this.direction)) {
 			// Oh no, radians.
 			position.rotate(Math.PI / 2);
-			drawSnail(position, Color.red, Color.white, Color.black);
+			drawSnail(position, Color.red, Color.white, eyeBallColor, eyeLidColor);
 		} else { // we don't have to say "right" here.
 			// Oh no, radians.
 			position.rotate(-Math.PI / 2);
-			drawSnail(position, Color.red, Color.white, Color.black);
+			drawSnail(position, Color.red, Color.white, eyeBallColor, eyeLidColor);
 		}
 
 		// It's OK if you forget this, Java will eventually notice, but better to have
@@ -98,7 +115,7 @@ public class Snail {
 	 * @param shellColor The color of the snail shell.
 	 * @param eyeColor   The color of the snail eye.
 	 */
-	public static void drawSnail(Graphics2D g, Color bodyColor, Color shellColor, Color eyeColor) {
+	public static void drawSnail(Graphics2D g, Color bodyColor, Color shellColor, Color eyeColor, Color eyeLid) {
 		Shape body = new Rectangle2D.Double(0, 0, 40, 50);
 		Shape tentacleL = new Rectangle2D.Double(0, -20, 5, 20);
 		Shape eyeWhiteL = new Ellipse2D.Double(-4, -28, 12, 12);
@@ -107,7 +124,7 @@ public class Snail {
 		g.setColor(bodyColor);
 		g.fill(body);
 		g.fill(tentacleL);
-		g.setColor(Color.white);
+		g.setColor(eyeLid);
 		g.fill(eyeWhiteL);
 		g.setColor(eyeColor);
 		g.fill(eyePupilL);
@@ -118,7 +135,7 @@ public class Snail {
 
 		g.setColor(bodyColor);
 		g.fill(tentacleR);
-		g.setColor(Color.white);
+		g.setColor(eyeLid);
 		g.fill(eyeWhiteR);
 		g.setColor(eyeColor);
 		g.fill(eyePupilR);
@@ -140,4 +157,5 @@ public class Snail {
 		g.setColor(Color.black);
 		g.draw(shell3);
 	}
+	
 }
