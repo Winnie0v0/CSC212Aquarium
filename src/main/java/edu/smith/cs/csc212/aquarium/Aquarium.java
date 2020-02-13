@@ -6,7 +6,7 @@ import java.util.Random;
 
 import me.jjfoley.gfx.GFX;
 
-//build on existed code @author jfoley 
+//All code in aquarium package was build on existed code @author jfoley 
 //https://github.com/jjfiv/CSC212Aquarium
 
 public class Aquarium extends GFX {
