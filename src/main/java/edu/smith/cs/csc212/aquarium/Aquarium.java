@@ -16,7 +16,7 @@ public class Aquarium extends GFX {
 	Snail algorithm = new Snail(100, Snail.HEIGHT, "top");
 	Bubble[] bubbles = new Bubble[10];
 	Fish[] fishes = new Fish[10];
-	Ocean Ocean = new Ocean();
+	Ocean Ocean = new Ocean(-100);
 	Color[] fishColor = new Color [10];
 	Shark Jack = new Shark(250,250);
 	
@@ -84,6 +84,7 @@ public class Aquarium extends GFX {
 			}
 		
 		Ocean.drawOcean(g);
+		Ocean.creatFood(g);
 		Jack.draw(g);	
 	}
 
