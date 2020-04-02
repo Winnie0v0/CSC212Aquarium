@@ -1,3 +1,6 @@
+//code in Fish class was build on existed code
+//https://github.com/jjfiv/CSC212Aquarium
+
 package edu.smith.cs.csc212.aquarium;
 
 import java.awt.Color;

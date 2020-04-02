@@ -1,3 +1,6 @@
+//code in SaveAGIFquarium class was written by jj
+//https://github.com/jjfiv/CSC212Aquarium
+
 package edu.smith.cs.csc212.aquarium;
 
 import java.io.File;

@@ -1,13 +1,12 @@
+//code in aquarium class was build on existed code
+//https://github.com/jjfiv/CSC212Aquarium
+
 package edu.smith.cs.csc212.aquarium;
 
 import java.awt.Color;
 import java.awt.Graphics2D;
 import java.util.Random;
-
 import me.jjfoley.gfx.GFX;
-
-//All code in aquarium package was build on existed code @author jfoley 
-//https://github.com/jjfiv/CSC212Aquarium
 
 public class Aquarium extends GFX {
 	public static int WIDTH = 500;

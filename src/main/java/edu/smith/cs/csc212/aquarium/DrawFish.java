@@ -1,3 +1,6 @@
+//code in DrawFish class was build on existed code
+//https://github.com/jjfiv/CSC212Aquarium
+
 package edu.smith.cs.csc212.aquarium;
 
 import java.awt.Color;
@@ -5,13 +8,6 @@ import java.awt.Graphics2D;
 import java.awt.Shape;
 import java.awt.geom.Ellipse2D;
 
-/**
- * This class is used statically (i.e., as a library) to draw fish in various
- * positions and sizes.
- * 
- * @author jfoley
- *
- */
 public class DrawFish {
 	/**
 	 * This code based on the Python fish in CSC111 labs, e.g.,
